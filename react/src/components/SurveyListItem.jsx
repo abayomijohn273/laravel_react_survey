@@ -12,7 +12,7 @@ const SurveyListItem = ({ survey, onDeleteClick }) => {
 
             <h4 className="mt-4 text-lg font-bold">{survey.title}</h4>
 
-            <div className="overfloe-hidden flex-1" dangerouslySetInnerHTML={{ __html: survey.description }}></div>
+            <div className="overflow-hidden flex-1" dangerouslySetInnerHTML={{ __html: survey.description }}></div>
 
             <div className="flex justify-between items-center mt-3">
                 <TButton to={`survey/${survey.id}`}>

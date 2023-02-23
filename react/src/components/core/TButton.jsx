@@ -8,6 +8,7 @@ const TButton = ({
     href = "",
     link = false,
     target = "_blank",
+    onClick = () => { },
     children
 }) => {
 
@@ -55,7 +56,7 @@ const TButton = ({
             case "indigo":
                 classes = [
                     ...classes,
-                    "text-indigo-600",
+                    "bg-indigo-600",
                     "focus:border-indigo-700",
                     "focus:ring-indigo-500"
                 ]
@@ -64,7 +65,7 @@ const TButton = ({
             case "red":
                 classes = [
                     ...classes,
-                    "text-red-600",
+                    "bg-red-600",
                     "focus:border-red-700",
                     "focus:ring-red-500"
                 ]
@@ -73,7 +74,7 @@ const TButton = ({
             case "green":
                 classes = [
                     ...classes,
-                    "text-emerald-500",
+                    "bg-emerald-500",
                     "focus:border-emerald-600",
                     "focus:ring-emerald-400"
                 ]
@@ -105,7 +106,7 @@ const TButton = ({
         <>
             {href && <a href={href} className={classes.join(" ")} target={target}>{children}</a>}
             {to && <Link to={to} className={classes.join(" ")}>{children}</Link>}
-            {!to && !href && <button className={classes.join(" ")}>{children}</button>}
+            {!to && !href && <button onClick={onClick} className={classes.join(" ")}>{children}</button>}
         </>
     )
 }
